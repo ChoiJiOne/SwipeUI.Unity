@@ -1,0 +1,6 @@
+# ShaderLab (.shader) 파일 무시
+*.shader linguist-detectable=false
+
+# HLSL (.hlsl, .cginc 등) 파일 무시
+*.hlsl linguist-detectable=false
+*.cginc linguist-detectable=false
