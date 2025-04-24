@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Pool;
+using System.Collections.Generic;
 
 public class SlotGenerator : MonoBehaviour
 {
@@ -9,13 +9,26 @@ public class SlotGenerator : MonoBehaviour
 
     [SerializeField] private Button _createButton;
 
+    private List<Color> _colors;
+    private int _currentIndex = 0;
+
     private void Awake()
     {
         _createButton.onClick.AddListener(CreateSlot);
+        _colors = new List<Color>{
+            Color.red,
+            Color.green,
+            Color.blue,
+            Color.yellow,
+            Color.cyan,
+            Color.magenta,
+        };
     }
 
     public void CreateSlot()
     {
-        _ = Instantiate(_slotControllerPrefab, _contentRect);
+        SlotController newSlotController = Instantiate(_slotControllerPrefab, _contentRect);
+        newSlotController.BgColor = _colors[_currentIndex];
+        _currentIndex = (_currentIndex + 1) % _colors.Count;
     }
 }
