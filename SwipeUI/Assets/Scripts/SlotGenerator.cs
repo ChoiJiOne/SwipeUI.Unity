@@ -1,9 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Pool;
 
 public class SlotGenerator : MonoBehaviour
 {
-    [SerializeField] private GameObject _slotPrefab;
+    [SerializeField] private SlotController _slotControllerPrefab;
     [SerializeField] private RectTransform _contentRect;
 
     [SerializeField] private Button _createButton;
@@ -15,6 +16,6 @@ public class SlotGenerator : MonoBehaviour
 
     public void CreateSlot()
     {
-        _ = Instantiate(_slotPrefab, _contentRect);
+        _ = Instantiate(_slotControllerPrefab, _contentRect);
     }
 }

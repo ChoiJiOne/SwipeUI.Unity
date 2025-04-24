@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd285584bb3d1a744b09edc51ca8c257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slotPrefab: {fileID: 7228136840904963989, guid: 27f9c58a9231a094b99104b82d14f074, type: 3}
+  _slotControllerPrefab: {fileID: 7958539630535746148, guid: 27f9c58a9231a094b99104b82d14f074, type: 3}
   _contentRect: {fileID: 2025801135}
   _createButton: {fileID: 1933072166}
 --- !u!1 &2134697945
