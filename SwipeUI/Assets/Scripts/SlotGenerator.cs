@@ -14,7 +14,7 @@ public class SlotGenerator : MonoBehaviour
 
     private void Awake()
     {
-        _createButton.onClick.AddListener(CreateSlot);
+        _createButton.onClick.AddListener(OnCreateButtonClicked);
         _colors = new List<Color>{
             Color.red,
             Color.green,
@@ -25,7 +25,7 @@ public class SlotGenerator : MonoBehaviour
         };
     }
 
-    public void CreateSlot()
+    private void OnCreateButtonClicked()
     {
         SlotController newSlotController = Instantiate(_slotControllerPrefab, _contentRect);
         newSlotController.BgColor = _colors[_currentIndex];
