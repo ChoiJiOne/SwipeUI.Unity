@@ -1067,8 +1067,8 @@ GameObject:
   - component: {fileID: 2025801135}
   - component: {fileID: 2025801137}
   - component: {fileID: 2025801136}
-  - component: {fileID: 2025801138}
   - component: {fileID: 2025801139}
+  - component: {fileID: 2025801138}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -1147,6 +1147,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b40bbb8608143074fa8ca956e04f9df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scrollBar: {fileID: 589477167}
+  _slotCreator: {fileID: 2025801139}
+  _swipeTime: 0.2
+  _swipeDist: 50
 --- !u!114 &2025801139
 MonoBehaviour:
   m_ObjectHideFlags: 0
