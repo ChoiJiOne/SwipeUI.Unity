@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 public class SlotGenerator : MonoBehaviour
 {
+    public UnityAction<SlotController> OnCreateSlot;
+
     [SerializeField] private SlotController _slotControllerPrefab;
     [SerializeField] private RectTransform _contentRect;
 
@@ -30,5 +33,7 @@ public class SlotGenerator : MonoBehaviour
         SlotController newSlotController = Instantiate(_slotControllerPrefab, _contentRect);
         newSlotController.BgColor = _colors[_currentIndex];
         _currentIndex = (_currentIndex + 1) % _colors.Count;
+
+        OnCreateSlot?.Invoke(newSlotController);
     }
 }
