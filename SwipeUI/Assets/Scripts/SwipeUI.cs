@@ -68,12 +68,13 @@ public class SwipeUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         _slotIndex.text = $"{_currentSlotIndex + 1} / {_slotControllers.Count}";
 
         float targetValue = _slotControllers.Count <= 1 ? 0.0f : (float)(_currentSlotIndex) / (_slotControllers.Count - 1);
-        _scrollTween = DOTween.To(
-                () => _scrollBar.value,
-                x => _scrollBar.value = x,
-                targetValue,
-                _swipeTime
-            ).SetEase(Ease.OutQuad);
+        _scrollTween = DOTween.To(GetScrollBarValue, SetScrollBarValue, targetValue, _swipeTime).SetEase(Ease.OutQuad);
+    }
+
+    private float GetScrollBarValue() => _scrollBar.value;
+    private void SetScrollBarValue(float value)
+    {
+        _scrollBar.value = value;
     }
 
     private void OnCreateSlot(SlotController newSlotController)
