@@ -65,6 +65,7 @@ public class SwipeUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         }
 
         _currentSlotIndex = Mathf.Clamp(_currentSlotIndex, 0, _slotControllers.Count - 1);
+        _slotIndex.text = $"{_currentSlotIndex + 1} / {_slotControllers.Count}";
 
         float targetValue = _slotControllers.Count <= 1 ? 0.0f : (float)(_currentSlotIndex) / (_slotControllers.Count - 1);
         _scrollTween = DOTween.To(
@@ -86,6 +87,7 @@ public class SwipeUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
         _totalWidth += newSlotController.Width;
         _slotControllers.Add(newSlotController);
+        _slotIndex.text = $"{_currentSlotIndex + 1} / {_slotControllers.Count}";
     }
 
     private void OnDestroySlot(SlotController slotController)
@@ -99,6 +101,8 @@ public class SwipeUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         {
             _currentSlotIndex = -1;
         }
+
+        _slotIndex.text = $"{_currentSlotIndex + 1} / {_slotControllers.Count}";
     }
 
     private void OnCreateButtonClicked()
