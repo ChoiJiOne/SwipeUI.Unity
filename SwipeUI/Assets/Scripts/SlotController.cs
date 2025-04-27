@@ -6,23 +6,18 @@ public class SlotController : MonoBehaviour
 {
     public UnityAction<SlotController> OnDestroySlot;
     public float Width => _rectTransform.rect.width;
-
-    public Color BgColor
-    {
-        get => _bgImage.color;
-        set
-        {
-            _bgImage.color = value;
-        }
-    }
-
+    
     [SerializeField] private RectTransform _rectTransform;
-    [SerializeField] private Image _bgImage;
     [SerializeField] private Button _okButton;
+    [SerializeField] private Image _bgImage;
+    [SerializeField] private Sprite[] _bgSprites;
 
     private void Awake()
     {
         _okButton.onClick.AddListener(OnOkButtonClicked);
+
+        int randomIndex = Random.Range(0, _bgSprites.Length);
+        _bgImage.sprite = _bgSprites[randomIndex];
     }
 
     private void OnOkButtonClicked()

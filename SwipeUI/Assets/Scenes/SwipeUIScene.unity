@@ -910,15 +910,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 0}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1146,9 +1146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b40bbb8608143074fa8ca956e04f9df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slotControllerPrefab: {fileID: 7958539630535746148, guid: 27f9c58a9231a094b99104b82d14f074, type: 3}
-  _contentRect: {fileID: 2025801135}
   _createButton: {fileID: 1933072166}
+  _contentRect: {fileID: 2025801135}
+  _slotControllerPrefab: {fileID: 7958539630535746148, guid: 27f9c58a9231a094b99104b82d14f074, type: 3}
   _scrollBar: {fileID: 589477167}
   _swipeThreshold: 400
   _swipeTime: 0.2

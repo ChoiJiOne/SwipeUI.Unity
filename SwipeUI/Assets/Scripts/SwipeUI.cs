@@ -17,9 +17,6 @@ public class SwipeUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
     [SerializeField] private float _swipeThreshold;
     [SerializeField] private float _swipeTime;
 
-    private List<Color> _colors;
-    private int _currentColorIndex = 0;
-
     private List<SlotController> _slotControllers = new();
     private float _totalWidth = 0.0f;
     private float _startPosX = 0.0f;
@@ -30,14 +27,6 @@ public class SwipeUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
     private void Awake()
     {
         _createButton.onClick.AddListener(OnCreateButtonClicked);
-        _colors = new List<Color>{
-            Color.red,
-            Color.green,
-            Color.blue,
-            Color.yellow,
-            Color.cyan,
-            Color.magenta,
-        };
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -114,9 +103,6 @@ public class SwipeUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
     private void OnCreateButtonClicked()
     {
         SlotController newSlotController = Instantiate(_slotControllerPrefab, _contentRect);
-        newSlotController.BgColor = _colors[_currentColorIndex];
-        _currentColorIndex = (_currentColorIndex + 1) % _colors.Count;
-
         OnCreateSlot(newSlotController);
     }
 }
