@@ -7,11 +7,12 @@ using UnityEngine.Events;
 
 public class SwipeUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    [SerializeField] private SlotController _slotControllerPrefab;
-    [SerializeField] private RectTransform _contentRect;
+    [Header("UI")]
     [SerializeField] private Button _createButton;
+    [SerializeField] private RectTransform _contentRect;
 
     [Header("Swipe")]
+    [SerializeField] private SlotController _slotControllerPrefab;
     [SerializeField] private Scrollbar _scrollBar;
     [SerializeField] private float _swipeThreshold;
     [SerializeField] private float _swipeTime;
