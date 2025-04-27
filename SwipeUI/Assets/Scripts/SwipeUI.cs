@@ -3,11 +3,12 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using DG.Tweening;
-using UnityEngine.Events;
+using TMPro;
 
 public class SwipeUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("UI")]
+    [SerializeField] private TextMeshProUGUI _slotIndex;
     [SerializeField] private Button _createButton;
     [SerializeField] private RectTransform _contentRect;
 
