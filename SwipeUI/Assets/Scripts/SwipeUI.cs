@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using DG.Tweening;
+using UnityEngine.Events;
 
 public class SwipeUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -80,7 +81,22 @@ public class SwipeUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
             _currentSlotIndex = 0;
         }
 
+        newSlotController.OnDestroySlot += OnDestroySlot;
+
         _totalWidth += newSlotController.Width;
         _slotControllers.Add(newSlotController);
+    }
+
+    private void OnDestroySlot(SlotController slotController)
+    {
+        _totalWidth -= slotController.Width;
+        _slotControllers.Remove(slotController);
+
+        slotController.OnDestroySlot -= OnDestroySlot;
+
+        if (_slotControllers.Count == 0)
+        {
+            _currentSlotIndex = -1;
+        }
     }
 }
