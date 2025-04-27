@@ -1150,6 +1150,7 @@ MonoBehaviour:
   _scrollBar: {fileID: 589477167}
   _slotCreator: {fileID: 2025801139}
   _swipeThreshold: 400
+  _swipeTime: 0.2
 --- !u!114 &2025801139
 MonoBehaviour:
   m_ObjectHideFlags: 0

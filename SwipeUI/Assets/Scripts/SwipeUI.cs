@@ -9,6 +9,7 @@ public class SwipeUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
     [SerializeField] private Scrollbar _scrollBar;
     [SerializeField] private SlotCreator _slotCreator;
     [SerializeField] private float _swipeThreshold;
+    [SerializeField] private float _swipeTime;
 
     private List<SlotController> _slotControllers = new();
     private float _totalWidth = 0.0f;
@@ -68,7 +69,7 @@ public class SwipeUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
                 () => _scrollBar.value,
                 x => _scrollBar.value = x,
                 targetValue,
-                0.3f
+                _swipeTime
             ).SetEase(Ease.OutQuad);
     }
 
