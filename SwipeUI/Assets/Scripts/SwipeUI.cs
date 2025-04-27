@@ -101,6 +101,10 @@ public class SwipeUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         {
             _currentSlotIndex = -1;
         }
+        else
+        {
+            _currentSlotIndex = Mathf.Clamp(_currentSlotIndex, 0, _slotControllers.Count - 1);
+        }
 
         _slotIndex.text = $"{_currentSlotIndex + 1} / {_slotControllers.Count}";
     }
