@@ -7,10 +7,17 @@ using UnityEngine.Events;
 
 public class SwipeUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    [SerializeField] private SlotController _slotControllerPrefab;
+    [SerializeField] private RectTransform _contentRect;
+    [SerializeField] private Button _createButton;
+
+    [Header("Swipe")]
     [SerializeField] private Scrollbar _scrollBar;
-    [SerializeField] private SlotCreator _slotCreator;
     [SerializeField] private float _swipeThreshold;
     [SerializeField] private float _swipeTime;
+
+    private List<Color> _colors;
+    private int _currentColorIndex = 0;
 
     private List<SlotController> _slotControllers = new();
     private float _totalWidth = 0.0f;
@@ -21,12 +28,15 @@ public class SwipeUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
     private void Awake()
     {
-        _slotCreator.OnCreateSlot += OnCreateSlot;
-    }
-
-    private void OnDestroy()
-    {
-        _slotCreator.OnCreateSlot -= OnCreateSlot;
+        _createButton.onClick.AddListener(OnCreateButtonClicked);
+        _colors = new List<Color>{
+            Color.red,
+            Color.green,
+            Color.blue,
+            Color.yellow,
+            Color.cyan,
+            Color.magenta,
+        };
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -98,5 +108,14 @@ public class SwipeUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         {
             _currentSlotIndex = -1;
         }
+    }
+
+    private void OnCreateButtonClicked()
+    {
+        SlotController newSlotController = Instantiate(_slotControllerPrefab, _contentRect);
+        newSlotController.BgColor = _colors[_currentColorIndex];
+        _currentColorIndex = (_currentColorIndex + 1) % _colors.Count;
+
+        OnCreateSlot(newSlotController);
     }
 }

@@ -1067,7 +1067,6 @@ GameObject:
   - component: {fileID: 2025801135}
   - component: {fileID: 2025801137}
   - component: {fileID: 2025801136}
-  - component: {fileID: 2025801139}
   - component: {fileID: 2025801138}
   m_Layer: 5
   m_Name: Content
@@ -1147,25 +1146,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b40bbb8608143074fa8ca956e04f9df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scrollBar: {fileID: 589477167}
-  _slotCreator: {fileID: 2025801139}
-  _swipeThreshold: 400
-  _swipeTime: 0.2
---- !u!114 &2025801139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2025801134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd285584bb3d1a744b09edc51ca8c257, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   _slotControllerPrefab: {fileID: 7958539630535746148, guid: 27f9c58a9231a094b99104b82d14f074, type: 3}
   _contentRect: {fileID: 2025801135}
   _createButton: {fileID: 1933072166}
+  _scrollBar: {fileID: 589477167}
+  _swipeThreshold: 400
+  _swipeTime: 0.2
 --- !u!1 &2134697945
 GameObject:
   m_ObjectHideFlags: 0
