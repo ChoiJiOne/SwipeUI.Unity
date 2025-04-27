@@ -1149,8 +1149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scrollBar: {fileID: 589477167}
   _slotCreator: {fileID: 2025801139}
-  _swipeTime: 0.2
-  _swipeDist: 50
+  _swipeThreshold: 400
 --- !u!114 &2025801139
 MonoBehaviour:
   m_ObjectHideFlags: 0
